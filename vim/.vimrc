@@ -1,6 +1,18 @@
-execute pathogen#infect()
-syntax on
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'rust-lang/rust.vim'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'jeffkreeftmeijer/vim-numbertoggle'
+Bundle 'Valloric/YouCompleteMe'
+
 filetype plugin indent on
+syntax on
 
 " backups and other junky files
 set backupdir=~/.vim/backup     " get backups outta here
