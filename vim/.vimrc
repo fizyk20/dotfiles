@@ -15,3 +15,13 @@ set laststatus=2
 set lazyredraw
 set ruler
 set showmatch
+
+let g:ycm_rust_src_path="/home/bartek/programy/rust/rust/src"
+
+autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
+
+" CTRL-t to toggle tree view
+nmap <silent> <C-t> :NERDTreeToggle<CR>
+" Set F2 to put the cursor to the nerdtree
+nmap <silent> <F2> :NERDTreeFind<CR>
