@@ -12,3 +12,6 @@ ln -s $MAINDIR/zsh/.zshrc ~/.zshrc
 
 # link .vimrc
 ln -s $MAINDIR/vim/.vimrc ~/.vimrc
+
+# link .Xresources
+ln -s $MAINDIR/.Xresources ~/.Xresources

@@ -1,0 +1,9 @@
+URxvt.font: xft:monospace:size=9
+URxvt.letterSpace: -1
+URxvt.perl-ext-common: selection-to-clipboard
+URxvt.background: black
+URxvt.foreground: white
+URxvt.transparent: true
+URxvt.shading: 20
+URxvt.scrollstyle: plain
+URxvt.scrollBar_right: true
