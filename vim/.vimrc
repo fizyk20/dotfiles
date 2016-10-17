@@ -5,11 +5,14 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
 Bundle 'rust-lang/rust.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'neomake/neomake'
+Bundle 'mhartington/oceanic-next'
+Bundle 'vim-airline/vim-airline'
+Bundle 'joshdick/onedark.vim'
 
 filetype plugin indent on
 syntax on
@@ -28,7 +31,14 @@ set lazyredraw
 set ruler
 set showmatch
 
+set t_Co=256
+colorscheme onedark
+let g:airline_theme='onedark'
+let g:airline_powerline_fonts = 1
+
 let g:ycm_rust_src_path="/home/bartek/programy/rust/rust/src"
+let g:rustfmt_autosave = 1
+let g:neomake_verbose = 2
 
 autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
@@ -37,3 +47,10 @@ autocmd BufEnter * NERDTreeMirror
 nmap <silent> <C-t> :NERDTreeToggle<CR>
 " Set F2 to put the cursor to the nerdtree
 nmap <silent> <F2> :NERDTreeFind<CR>
+
+let g:neomake_rust_maker = {
+    \ 'exe': 'rustup',
+    \ 'args': ['run', 'nightly', 'cargo', 'rustc', '--features', 'use-mock-crust clippy', '--', '-Zno-trans', '--test', '-Zincremental=target/incremental'],
+    \ 'errorformat': neomake#makers#ft#rust#rustc()['errorformat'],
+    \}
+autocmd BufWritePost *.rs Neomake! rust

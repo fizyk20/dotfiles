@@ -1,5 +1,5 @@
-URxvt.font: xft:monospace:size=9
-URxvt.letterSpace: -1
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=10
+URxvt.letterSpace: 0
 URxvt.perl-ext-common: selection-to-clipboard
 URxvt.background: black
 URxvt.foreground: white
