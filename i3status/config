@@ -33,6 +33,7 @@ ethernet _first_ {
 
 battery 0 {
         format = "%status %percentage %remaining"
+	path = "/sys/class/power_supply/BAT1/uevent"
 }
 
 run_watch VPN {
@@ -54,5 +55,5 @@ disk "/" {
 volume master {
         format = "♪: %volume"
         format_muted = "♪: muted (%volume)"
-        device = "pulse"
+        device = "default"
 }
