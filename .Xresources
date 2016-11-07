@@ -7,3 +7,4 @@ URxvt.transparent: true
 URxvt.shading: 20
 URxvt.scrollstyle: plain
 URxvt.scrollBar_right: true
+Xcursor.theme: Adwaita
