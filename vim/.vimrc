@@ -48,7 +48,7 @@ nmap <silent> <C-t> :NERDTreeToggle<CR>
 " Set F2 to put the cursor to the nerdtree
 nmap <silent> <F2> :NERDTreeFind<CR>
 
-let g:neomake_rust_maker = {
+let g:neomake_rust_rust_maker = {
     \ 'exe': 'rustup',
     \ 'args': ['run', 'nightly', 'cargo', 'rustc', '--features', 'use-mock-crust clippy', '--', '-Zno-trans', '--test', '-Zincremental=target/incremental'],
     \ 'errorformat': neomake#makers#ft#rust#rustc()['errorformat'],
