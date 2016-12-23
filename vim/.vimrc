@@ -13,6 +13,7 @@ Bundle 'neomake/neomake'
 Bundle 'mhartington/oceanic-next'
 Bundle 'vim-airline/vim-airline'
 Bundle 'joshdick/onedark.vim'
+Bundle 'thinca/vim-localrc'
 
 filetype plugin indent on
 syntax on
@@ -36,7 +37,7 @@ colorscheme onedark
 let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 
-let g:ycm_rust_src_path="/home/bartek/programy/rust/rust/src"
+let g:ycm_rust_src_path="/home/bartek/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src"
 let g:rustfmt_autosave = 1
 let g:neomake_verbose = 2
 
@@ -48,9 +49,9 @@ nmap <silent> <C-t> :NERDTreeToggle<CR>
 " Set F2 to put the cursor to the nerdtree
 nmap <silent> <F2> :NERDTreeFind<CR>
 
-let g:neomake_rust_rust_maker = {
-    \ 'exe': 'rustup',
-    \ 'args': ['run', 'nightly', 'cargo', 'rustc', '--features', 'use-mock-crust clippy', '--', '-Zno-trans', '--test', '-Zincremental=target/incremental'],
+let g:neomake_rust_maker = {
+    \ 'exe': 'cargo',
+    \ 'args': ['rustc', '--', '-Zno-trans', '--test', '-Zincremental=target/incremental'],
     \ 'errorformat': neomake#makers#ft#rust#rustc()['errorformat'],
     \}
 autocmd BufWritePost *.rs Neomake! rust
