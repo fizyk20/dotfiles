@@ -37,7 +37,7 @@ colorscheme onedark
 let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 
-let g:ycm_rust_src_path="/home/bartek/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src"
+" let g:ycm_rust_src_path="/home/bartek/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src"
 let g:rustfmt_autosave = 1
 let g:neomake_verbose = 2
 
@@ -54,4 +54,6 @@ let g:neomake_rust_maker = {
     \ 'args': ['rustc', '--', '-Zno-trans', '--test', '-Zincremental=target/incremental'],
     \ 'errorformat': neomake#makers#ft#rust#rustc()['errorformat'],
     \}
+let g:neomake_rust_enabled_makers = []
+autocmd! BufWritePost
 autocmd BufWritePost *.rs Neomake! rust

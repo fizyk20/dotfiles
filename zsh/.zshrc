@@ -54,7 +54,6 @@ plugins=(git virtualenv virtualenvwrapper)
 # User configuration
 
 export WORKON_HOME=~/envs
-export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bartek/.cabal/bin:/home/bartek/.cargo/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
