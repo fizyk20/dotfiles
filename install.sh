@@ -12,6 +12,9 @@ ln -s $MAINDIR/zsh/.zshrc ~/.zshrc
 
 # link .vimrc
 ln -s $MAINDIR/vim/.vimrc ~/.vimrc
+ln -s $MAINDIR/vim/.vimrc.git ~/.vimrc.git
 
 # link .Xresources
 ln -s $MAINDIR/.Xresources ~/.Xresources
+
+git config --global core.editor "nvim -u $HOME/.vimrc.git"

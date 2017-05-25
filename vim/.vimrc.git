@@ -1,0 +1,33 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'jeffkreeftmeijer/vim-numbertoggle'
+Bundle 'mhartington/oceanic-next'
+Bundle 'vim-airline/vim-airline'
+Bundle 'joshdick/onedark.vim'
+Bundle 'thinca/vim-localrc'
+
+filetype plugin indent on
+syntax on
+
+" backups and other junky files
+set backupdir=~/.vim/backup     " get backups outta here
+set directory=~/.vim/swap       " get swapfiles outta here
+set writebackup                 " temp backup during write
+set undodir=~/.vim/undo         " persistent undo storage
+set undofile                    " persistent undo on
+
+set number
+set showcmd
+set laststatus=2
+set lazyredraw
+set ruler
+set showmatch
+
+set t_Co=256
+colorscheme onedark
+let g:airline_theme='onedark'
+let g:airline_powerline_fonts = 1
