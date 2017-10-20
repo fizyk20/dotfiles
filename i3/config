@@ -203,7 +203,7 @@ bindsym XF86TouchpadToggle exec /home/bartek/.config/i3/toggletouchpad.sh # togg
 # finds out, if available)
 #
 bar {
-        status_command i3status
+        status_command $HOME/dotfiles/conky-i3bar
 }
 
 focus_follows_mouse no
