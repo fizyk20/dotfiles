@@ -62,7 +62,7 @@ conky.text = [[
  { "full_text": "RAM ${memperc}%", "color": ${if_match ${memperc}<75}"\#00ff00"${else}${if_match ${memperc}<90}"\#ffff00"${else}"\#ff0000"${endif}${endif} },
 
 ${if_up wlp5s0}
- { "full_text": "WiFi: (${wireless_link_qual_perc wlp5s0}% at ${wireless_essid wlp5s0}) ${addr wlp5s0}", "color": ${if_match ${wireless_link_qual_perc wlp5s0}<40}"\#ff0000"${else}${if_match ${wireless_link_qual_perc wlp5s0}<50}"\ffff00"${else}"\#00ff00"${endif}${endif} },
+ { "full_text": "WiFi: (${wireless_link_qual_perc wlp5s0}% at ${wireless_essid wlp5s0}) ${addr wlp5s0}", "min_width": "WiFi: (100% at ${wireless_essid wlp5s0}) ${addr wlp5s0}", "align": "left", "color": ${if_match ${wireless_link_qual_perc wlp5s0}<40}"\#ff0000"${else}${if_match ${wireless_link_qual_perc wlp5s0}<50}"\ffff00"${else}"\#00ff00"${endif}${endif} },
 ${endif}
 
 ${if_up enp3s0}
@@ -74,7 +74,7 @@ ${if_up tun0}
 ${endif}
 
  { "full_text": "${battery_short BAT1} ${battery_time BAT1}", "color": ${if_match ${battery_percent BAT1}>50}"\#ffffff"${else}${if_match ${battery_percent BAT1}>25}"\#ffff00"${else}"\#ff0000"${endif}${endif} },
- { "full_text": "CPU: ${cpu}%", "color": "\#ffffff" },
+ { "full_text": "CPU: ${cpu}%", "min_width": "CPU: 100%", "align": "left", "color": "\#ffffff" },
  { "full_text": "♪: ${if_pa_sink_muted}(muted) ${endif}${pa_sink_volume}%", "color": ${if_pa_sink_muted}"\#ffff00"${else}"\#ffffff"${endif} },
  { "full_text": "${time %Y-%m-%d %H:%M:%S}", "color": "\#ffffff" }
 ],
