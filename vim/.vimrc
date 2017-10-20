@@ -3,17 +3,18 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'rust-lang/rust.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'jeffkreeftmeijer/vim-numbertoggle'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'neomake/neomake'
-Bundle 'mhartington/oceanic-next'
-Bundle 'vim-airline/vim-airline'
-Bundle 'joshdick/onedark.vim'
-Bundle 'thinca/vim-localrc'
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rust-lang/rust.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'autozimu/LanguageClient-neovim'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'neomake/neomake'
+Plugin 'mhartington/oceanic-next'
+Plugin 'vim-airline/vim-airline'
+Plugin 'joshdick/onedark.vim'
+Plugin 'thinca/vim-localrc'
 
 filetype plugin indent on
 syntax on
@@ -49,11 +50,26 @@ nmap <silent> <C-t> :NERDTreeToggle<CR>
 " Set F2 to put the cursor to the nerdtree
 nmap <silent> <F2> :NERDTreeFind<CR>
 
+" LanguageClient config
+set hidden
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \}
+let g:LanguageClient_autoStart = 1
+let g:deoplete#enable_at_startup = 1
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+
+" Neomake config
+
 let g:neomake_rust_maker = {
     \ 'exe': 'cargo',
-    \ 'args': ['rustc', '--', '-Zno-trans', '--test', '-Zincremental=target/incremental'],
+    \ 'args': ['check'],
     \ 'errorformat': neomake#makers#ft#rust#rustc()['errorformat'],
     \}
 let g:neomake_rust_enabled_makers = []
 autocmd! BufWritePost
 autocmd BufWritePost *.rs Neomake! rust
+
+au FileType javascript setl sw=2 sts=2
