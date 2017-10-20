@@ -76,6 +76,6 @@ ${endif}
  { "full_text": "${battery_short BAT1} ${battery_time BAT1}", "color": ${if_match ${battery_percent BAT1}>50}"\#ffffff"${else}${if_match ${battery_percent BAT1}>25}"\#ffff00"${else}"\#ff0000"${endif}${endif} },
  { "full_text": "CPU: ${cpu}%", "min_width": "CPU: 100%", "align": "left", "color": "\#ffffff" },
  { "full_text": "♪: ${if_pa_sink_muted}(muted) ${endif}${pa_sink_volume}%", "color": ${if_pa_sink_muted}"\#ffff00"${else}"\#ffffff"${endif} },
- { "full_text": "${time %Y-%m-%d %H:%M:%S}", "color": "\#ffffff" }
+ { "full_text": "${time %Y-%m-%d %H:%M:%S}", "color": "\#ffffff", "name": "time" }
 ],
 ]]
