@@ -10,6 +10,9 @@ prompt_setup_ebvalaim(){
 
   base_prompt='[%{$fg[magenta]%}%n%{$reset_color%}%{$fg[cyan]%}@%{$reset_color%}%{$fg[yellow]%}%m%{$reset_color%} %{$fg[cyan]%}%0~%{$reset_color%}]%{$reset_color%}'
   post_prompt='%{$fg[cyan]%}$%{$reset_color%} '
+  if [ `whoami` = 'root' ]; then
+    post_prompt='%{$fg[cyan]%}#%{$reset_color%} '
+  fi
 
   base_prompt_nocolor=$(echo "$base_prompt" | perl -pe "s/%\{[^}]+\}//g")
   post_prompt_nocolor=$(echo "$post_prompt" | perl -pe "s/%\{[^}]+\}//g")
