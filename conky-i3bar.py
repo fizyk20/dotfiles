@@ -21,15 +21,17 @@ def open_window(width, height, x, y, *args):
         stderr=subprocess.DEVNULL)
 
 def handle(data):
-    name = data["name"]
-    button = data["button"]
-    x = data["x"]
-    y = data["y"]
+    name = data.get("name", "")
+    button = data.get("button", -1)
+    x = data.get("x", -1)
+    y = data.get("y", -1)
     if name == "time":
         width = 200
         height = 120
         p = open_window(width, height, x-100, y, "--calendar", "--no-buttons")
         return p, None
+    else:
+        return None, None
 
 def poll_processes(processes):
     toremove = []
