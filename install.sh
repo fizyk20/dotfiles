@@ -18,3 +18,13 @@ ln -s $MAINDIR/vim/.vimrc.git ~/.vimrc.git
 ln -s $MAINDIR/.Xresources ~/.Xresources
 
 git config --global core.editor "nvim -u $HOME/.vimrc.git"
+
+# link themes
+rm ~/.gtkrc-2.0
+rm ~/.icons/default/index.theme
+mkdir -p ~/.icons/default
+ln -s $MAINDIR/theme/.gtkrc-2.0 ~/.gtkrc-2.0
+ln -s $MAINDIR/theme/index.theme ~/.icons/default/index.theme
+rm ~/.config/gtk-3.0/settings.ini
+mkdir -p ~/.config/gtk-3.0
+ln -s $MAINDIR/theme/gtk3-settings.ini ~/.config/gtk-3.0/settings.ini
