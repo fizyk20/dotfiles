@@ -40,6 +40,7 @@ let g:airline_powerline_fonts = 1
 
 " let g:ycm_rust_src_path="/home/bartek/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src"
 let g:rustfmt_autosave = 1
+let g:rustfmt_command = "rustup run nightly rustfmt"
 let g:neomake_verbose = 2
 
 autocmd VimEnter * NERDTree
@@ -65,7 +66,7 @@ nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 
 let g:neomake_rust_maker = {
     \ 'exe': 'cargo',
-    \ 'args': ['check'],
+    \ 'args': ['check', '--all', '--tests'],
     \ 'errorformat': neomake#makers#ft#rust#rustc()['errorformat'],
     \}
 let g:neomake_rust_enabled_makers = []
