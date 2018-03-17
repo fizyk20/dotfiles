@@ -202,6 +202,7 @@ bindsym XF86TouchpadToggle exec /home/bartek/.config/i3/toggletouchpad.sh # togg
 for_window [class="YADWIN"] border none
 for_window [class="YADWIN"] floating enable
 bar {
+	tray_output primary
         status_command $HOME/dotfiles/conky-i3bar.py
 }
 
