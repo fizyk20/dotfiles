@@ -61,7 +61,7 @@ conky.text = [[
  { "full_text": "RAM ${memperc}%", "color": ${if_match ${memperc}<75}"\#00ff00"${else}${if_match ${memperc}<90}"\#ffff00"${else}"\#ff0000"${endif}${endif} },
 
 ${if_up wlp5s0}
- { "full_text": "WiFi: (${wireless_link_qual_perc wlp5s0}% at ${wireless_essid wlp5s0}) ${addr wlp5s0}", "min_width": "WiFi: (100% at ${wireless_essid wlp5s0}) ${addr wlp5s0}", "align": "left", "color": ${if_match ${wireless_link_qual_perc wlp5s0}<40}"\#ff0000"${else}${if_match ${wireless_link_qual_perc wlp5s0}<50}"\ffff00"${else}"\#00ff00"${endif}${endif} },
+ { "full_text": "WiFi: (${if_match ${wireless_link_qual_perc wlp5s0}<100} ${endif}${wireless_link_qual_perc wlp5s0}% at ${wireless_essid wlp5s0}) ${addr wlp5s0}", "align": "left", "color": ${if_match ${wireless_link_qual_perc wlp5s0}<40}"\#ff0000"${else}${if_match ${wireless_link_qual_perc wlp5s0}<50}"\ffff00"${else}"\#00ff00"${endif}${endif} },
 ${endif}
 
 ${if_up enp3s0}
