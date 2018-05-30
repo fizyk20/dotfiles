@@ -37,3 +37,7 @@ ln -s $MAINDIR/theme/index.theme ~/.icons/default/index.theme
 rm ~/.config/gtk-3.0/settings.ini
 mkdir -p ~/.config/gtk-3.0
 ln -s $MAINDIR/theme/gtk3-settings.ini ~/.config/gtk-3.0/settings.ini
+
+rm -r ~/.config/termite
+mkdir -p ~/.config/termite
+ln -s $MAINDIR/termite.config ~/.config/termite/config

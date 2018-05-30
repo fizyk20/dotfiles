@@ -31,7 +31,7 @@ font pango:Source Code Pro 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -e tmux #i3-sensible-terminal
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -205,6 +205,7 @@ bindsym XF86TouchpadToggle exec /home/bartek/.config/i3/toggletouchpad.sh # togg
 for_window [class="YADWIN"] border none
 for_window [class="YADWIN"] floating enable
 for_window [class="Alacritty"] border pixel 1
+for_window [title="VLsub 0.10.2"] floating enable
 
 bar {
 	tray_output primary
