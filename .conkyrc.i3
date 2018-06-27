@@ -57,7 +57,8 @@ conky.config = {
 conky.text = [[
 [
  { "full_text": "Warszawa: ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA weather} ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA temperature}°C, ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA humidity}% humidity, ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA pressure} mbar, wind ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA wind_speed}km/h ", "color": "\#ffffff" },
- { "full_text": "HDD ${fs_free /home} free", "color": "\#ffffff" },
+ { "full_text": "/ ${fs_free /} free", "color": "\#ffffff" },
+ { "full_text": "/home ${fs_free /home} free", "color": "\#ffffff" },
  { "full_text": "RAM ${memperc}%", "color": ${if_match ${memperc}<75}"\#00ff00"${else}${if_match ${memperc}<90}"\#ffff00"${else}"\#ff0000"${endif}${endif} },
 
 ${if_up wlp5s0}
