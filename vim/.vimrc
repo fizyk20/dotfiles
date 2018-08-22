@@ -12,11 +12,12 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'neomake/neomake'
+" Plugin 'neomake/neomake'
 Plugin 'mhartington/oceanic-next'
 Plugin 'vim-airline/vim-airline'
 Plugin 'joshdick/onedark.vim'
 Plugin 'thinca/vim-localrc'
+Plugin 'mitsuhiko/vim-jinja'
 
 filetype plugin indent on
 syntax on
@@ -43,7 +44,7 @@ let g:airline_powerline_fonts = 1
 " let g:ycm_rust_src_path="/home/bartek/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src"
 let g:rustfmt_autosave = 1
 let g:rustfmt_command = "rustup run nightly rustfmt"
-let g:neomake_verbose = 2
+" let g:neomake_verbose = 2
 
 autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
@@ -64,15 +65,7 @@ let g:deoplete#enable_at_startup = 1
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 
-" Neomake config
-
-let g:neomake_rust_maker = {
-    \ 'exe': 'cargo',
-    \ 'args': ['check', '--all', '--tests'],
-    \ 'errorformat': neomake#makers#ft#rust#rustc()['errorformat'],
-    \}
-let g:neomake_rust_enabled_makers = []
-autocmd! BufWritePost
-autocmd BufWritePost *.rs Neomake! rust
+" autocmd! BufWritePost
+" autocmd BufWritePost *.rs Neomake! rust
 
 au FileType javascript setl sw=2 sts=2
