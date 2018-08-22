@@ -58,7 +58,7 @@ nmap <silent> <F2> :NERDTreeFind<CR>
 " LanguageClient config
 set hidden
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'rust': ['rls'],
     \}
 let g:LanguageClient_autoStart = 1
 let g:deoplete#enable_at_startup = 1
