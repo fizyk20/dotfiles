@@ -16,3 +16,5 @@ rm /etc/modprobe.d/bumblebee.conf
 rm /etc/modprobe.d/bbswitch.conf
 
 cp $MAINDIR/xorg.conf /etc/X11/xorg.conf
+
+eselect opengl set nvidia
