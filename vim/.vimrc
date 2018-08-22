@@ -35,6 +35,7 @@ set laststatus=2
 set lazyredraw
 set ruler
 set showmatch
+set colorcolumn=100
 
 set t_Co=256
 colorscheme onedark
