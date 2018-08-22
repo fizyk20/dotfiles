@@ -54,7 +54,7 @@ plugins=(git virtualenv virtualenvwrapper)
 # User configuration
 
 export WORKON_HOME=~/envs
-export PATH="/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/bartek/.cabal/bin:/home/bartek/.cargo/bin"
+export PATH="/home/bartek/.cabal/bin:/home/bartek/.cargo/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
