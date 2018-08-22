@@ -209,7 +209,7 @@ for_window [title="VLsub 0.10.2"] floating enable
 
 bar {
 	tray_output primary
-        status_command $HOME/dotfiles/conky-i3bar.py
+	status_command $HOME/dotfiles/conky-i3bar.py
 }
 
 focus_follows_mouse no
