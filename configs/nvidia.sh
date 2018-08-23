@@ -6,7 +6,7 @@ fi
 
 MAINDIR=$(pwd)
 
-cp $MAINDIR/lightdm/* /etc/lightdm/
+cp $MAINDIR/lightdm/nvidia/* /etc/lightdm/
 
 # disable bumblebee
 
