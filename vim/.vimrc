@@ -18,6 +18,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'joshdick/onedark.vim'
 Plugin 'thinca/vim-localrc'
 Plugin 'mitsuhiko/vim-jinja'
+Plugin 'cespare/vim-toml'
 
 filetype plugin indent on
 syntax on
