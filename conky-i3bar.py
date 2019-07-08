@@ -3,6 +3,8 @@
 import sys
 import subprocess
 import json
+from threading import Thread
+import time
 
 BAR_H = 110
 
@@ -13,7 +15,7 @@ def open_window(width, height, x, y, *args):
         "--height=%d" % height,
         "--posx=%d" % x,
         "--posy=%d" % (y - height/2 - BAR_H),
-        "--class=YADWIN", 
+        "--class=YADWIN",
     ]
     arguments = arguments + [*args]
     return subprocess.Popen(arguments,
@@ -44,10 +46,19 @@ def poll_processes(processes):
     for x in toremove:
         processes.remove(x)
 
+class ConkyRunner(Thread):
+    def run(self):
+        conky = subprocess.Popen(["conky", "-c", "/home/bartek/dotfiles/.conkyrc.i3"])
+        while True:
+            time.sleep(1)
+            if conky.poll():
+                conky = subprocess.Popen(["conky", "-c", "/home/bartek/dotfiles/.conkyrc.i3"])
+
 def main():
     print('{ "version": 1, "click_events": true }')
     print("[\n[],")
-    subprocess.Popen(["conky", "-c", "/home/bartek/dotfiles/.conkyrc.i3"])
+    conky = ConkyRunner()
+    conky.start()
     processes = set()
     while True:
         poll_processes(processes)

@@ -26,29 +26,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 
 conky.config = {
-	out_to_x = false,
+    out_to_x = false,
     own_window = false,
     out_to_console = true,
     out_to_stderr = false,
     background = false,
-	max_text_width = 0,
+    max_text_width = 0,
 
     update_interval = 1.0,
 
-	total_run_times = 0,
+    total_run_times = 0,
 
-	short_units = true,
+    short_units = true,
 
-	if_up_strictness = 'address',
+    if_up_strictness = 'address',
 
     use_spacer = 'none',
 
-	override_utf8_locale = false,
+    override_utf8_locale = false,
 
     cpu_avg_samples = 2,
     net_avg_samples = 2,
 
-	default_color = 'white',
+    default_color = 'white',
     default_outline_color = 'white',
     default_shade_color = 'white',
     no_buffers = true,
@@ -56,13 +56,13 @@ conky.config = {
 
 conky.text = [[
 [
- { "full_text": "Warszawa: ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA weather} ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA temperature}°C, ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA humidity}% humidity, ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA pressure} mbar, wind ${weather http://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA wind_speed}km/h ", "color": "\#ffffff" },
+ { "full_text": "Warszawa: ${weather https://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA weather} ${weather https://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA temperature}°C, ${weather https://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA humidity}% humidity, ${weather https://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA pressure} mbar, wind ${weather https://tgftp.nws.noaa.gov/data/observations/metar/stations/ EPWA wind_speed}km/h ", "color": "\#ffffff" },
  { "full_text": "/ ${fs_free /} free", "color": "\#ffffff" },
  { "full_text": "/home ${fs_free /home} free", "color": "\#ffffff" },
  { "full_text": "RAM ${memperc}%", "color": ${if_match ${memperc}<75}"\#00ff00"${else}${if_match ${memperc}<90}"\#ffff00"${else}"\#ff0000"${endif}${endif} },
 
 ${if_up wlp5s0}
- { "full_text": "WiFi: (${if_match ${wireless_link_qual_perc wlp5s0}<100} ${endif}${wireless_link_qual_perc wlp5s0}% at ${wireless_essid wlp5s0}) ${addr wlp5s0}", "align": "left", "color": ${if_match ${wireless_link_qual_perc wlp5s0}<40}"\#ff0000"${else}${if_match ${wireless_link_qual_perc wlp5s0}<50}"\ffff00"${else}"\#00ff00"${endif}${endif} },
+ { "full_text": "WiFi: (${if_match ${wireless_link_qual_perc wlp5s0}<100} ${endif}${wireless_link_qual_perc wlp5s0}% at ${wireless_essid wlp5s0}) ${addr wlp5s0}", "align": "left", "color": ${if_match ${wireless_link_qual_perc wlp5s0}<40}"\#ff0000"${else}${if_match ${wireless_link_qual_perc wlp5s0}<50}"\#ffff00"${else}"\#00ff00"${endif}${endif} },
 ${endif}
 
 ${if_up enp3s0}
