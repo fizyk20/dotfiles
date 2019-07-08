@@ -43,10 +43,8 @@ colorscheme onedark
 let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 
-" let g:ycm_rust_src_path="/home/bartek/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src"
 let g:rustfmt_autosave = 1
-let g:rustfmt_command = "rustup run nightly rustfmt"
-" let g:neomake_verbose = 2
+let g:rustfmt_command = "rustfmt"
 
 autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
@@ -55,6 +53,8 @@ autocmd BufEnter * NERDTreeMirror
 nmap <silent> <C-t> :NERDTreeToggle<CR>
 " Set F2 to put the cursor to the nerdtree
 nmap <silent> <F2> :NERDTreeFind<CR>
+
+nmap <silent> <C-l> :set relativenumber!<CR>
 
 " LanguageClient config
 set hidden

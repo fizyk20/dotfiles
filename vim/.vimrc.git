@@ -34,4 +34,3 @@ let g:airline_powerline_fonts = 1
 
 set colorcolumn=72
 set tw=72
-set fo+=a
