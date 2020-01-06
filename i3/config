@@ -228,9 +228,8 @@ focus_follows_mouse no
 
 # autostart
 exec --no-startup-id feh --bg-fill /home/bartek/Grafika/sky.jpg
-exec compton -b
 exec redshift-gtk
 exec dropbox
-exec nm-applet
+#exec nm-applet
 exec setxkbmap -layout pl -variant basic
 exec ibus-daemon -drx
