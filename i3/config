@@ -220,7 +220,7 @@ for_window [class="YADWIN"] floating enable
 for_window [title="VLsub 0.10.2"] floating enable
 
 bar {
-	tray_output eDP-1-1
+	tray_output primary
 	status_command $HOME/dotfiles/conky-i3bar.py
 }
 
