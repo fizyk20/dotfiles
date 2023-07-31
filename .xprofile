@@ -1,4 +1,6 @@
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+export __GLVND_DISALLOW_PATCHING=1
+export XDG_DATA_DIRS=/usr/local/share:/usr/share:$HOME/.local/share
 xrandr --dpi 96
