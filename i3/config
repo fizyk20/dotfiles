@@ -18,7 +18,7 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 9
-font pango:DejaVu Sans 10
+font pango:DejaVu Sans, FreeMono 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -32,6 +32,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+
+bindsym $mod+Print exec maim $HOME/`date +%Y-%m-%d_%H:%M:%S`.png
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -98,6 +100,7 @@ bindsym $mod+Shift+a focus child
 
 set $workspace1 "1 "
 set $workspace2 "2 "
+set $workspace8 "8"
 set $workspace9 "9"
 set $workspace10 "10 "
 set $workspace11 "11"
@@ -156,7 +159,7 @@ bindsym $mod+Shift+Mod1+9 move container to workspace $workspace19
 bindsym $mod+Shift+Mod1+0 move container to workspace $workspace20
 
 assign [class="Pidgin"] $workspace10
-assign [class="VirtualBox Manager"] $workspace9
+assign [class="VirtualBox Manager"] $workspace8
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -218,10 +221,11 @@ for_window [class="YADWIN"] border none
 for_window [class="YADWIN"] floating enable
 #for_window [class="Alacritty"] border pixel 1
 for_window [title="VLsub 0.10.2"] floating enable
+for_window [title="Rendering Offscreen"] floating enable
 
 bar {
-	tray_output primary
-	status_command $HOME/dotfiles/conky-i3bar.py
+    tray_output primary
+    status_command $HOME/dotfiles/conky-i3bar.py
 }
 
 focus_follows_mouse no
@@ -233,3 +237,4 @@ exec dropbox
 #exec nm-applet
 exec setxkbmap -layout pl -variant basic
 exec ibus-daemon -drx
+#exec picom -bCG -d :0
