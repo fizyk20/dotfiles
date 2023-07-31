@@ -3,6 +3,7 @@
 import sys
 import subprocess
 import json
+import re
 from threading import Thread
 import time
 
@@ -46,13 +47,34 @@ def poll_processes(processes):
     for x in toremove:
         processes.remove(x)
 
+HOME_REGEX = re.compile('/home')
+RW_REGEX = re.compile('rw,')
+RO_REGEX = re.compile('ro,')
+
+def filter_output(line):
+    decoded = line.decode('utf-8')
+    if HOME_REGEX.search(decoded) is not None:
+        home_line = None
+        with open('/proc/mounts', 'r') as mounts:
+            for mount_line in mounts:
+                if HOME_REGEX.search(mount_line) is not None:
+                    home_line = mount_line
+        if home_line is not None:
+            if RW_REGEX.search(home_line) is not None:
+                return decoded.replace('#ffffff', '#c0ffc0')
+            elif RO_REGEX.search(home_line) is not None:
+                return decoded.replace('#ffffff', '#ff0000')
+    return decoded
+
 class ConkyRunner(Thread):
     def run(self):
-        conky = subprocess.Popen(["conky", "-c", "/home/bartek/dotfiles/.conkyrc.i3"])
+        conky = subprocess.Popen(["conky", "-c", "/home/bartek/dotfiles/.conkyrc.i3"], stdout=subprocess.PIPE)
         while True:
-            time.sleep(1)
+            for line in conky.stdout:
+                print(filter_output(line))
+                sys.stdout.flush()
             if conky.poll():
-                conky = subprocess.Popen(["conky", "-c", "/home/bartek/dotfiles/.conkyrc.i3"])
+                conky = subprocess.Popen(["conky", "-c", "/home/bartek/dotfiles/.conkyrc.i3"], stdout=subprocess.PIPE)
 
 def main():
     print('{ "version": 1, "click_events": true }')
