@@ -1,14 +1,17 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.Vim
 
-Bundle 'gmarik/vundle'
-Bundle 'jeffkreeftmeijer/vim-numbertoggle'
-Bundle 'mhartington/oceanic-next'
-Bundle 'vim-airline/vim-airline'
-Bundle 'joshdick/onedark.vim'
-Bundle 'thinca/vim-localrc'
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.Vim'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'mhartington/oceanic-next'
+Plugin 'vim-airline/vim-airline'
+Plugin 'joshdick/onedark.vim'
+Plugin 'thinca/vim-localrc'
+
+call vundle#end()
 
 filetype plugin indent on
 syntax on

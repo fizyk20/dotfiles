@@ -1,12 +1,14 @@
 set nocompatible
 set ts=4
 set sw=4
+set expandtab
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.Vim
 
-Plugin 'gmarik/vundle'
-Plugin 'scrooloose/nerdtree'
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.Vim'
+Plugin 'preservim/nerdtree'
 Plugin 'rust-lang/rust.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
@@ -19,6 +21,8 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'thinca/vim-localrc'
 Plugin 'mitsuhiko/vim-jinja'
 Plugin 'cespare/vim-toml'
+
+call vundle#end()
 
 filetype plugin indent on
 syntax on
@@ -59,13 +63,16 @@ nmap <silent> <C-l> :set relativenumber!<CR>
 " LanguageClient config
 set hidden
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rls'],
+    \ 'rust': ['rust-analyzer'],
     \}
 let g:LanguageClient_autoStart = 1
+let g:LanguageClient_loggingFile = '/tmp/lc.log'
+
 let g:deoplete#enable_at_startup = 1
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> gr :call LanguageClient_textDocument_rename()<CR>
 
 " autocmd! BufWritePost
 " autocmd BufWritePost *.rs Neomake! rust
