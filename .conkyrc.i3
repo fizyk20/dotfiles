@@ -61,19 +61,19 @@ conky.text = [[
  { "full_text": "/home ${fs_free /home} free", "color": "\#ffffff" },
  { "full_text": "RAM ${memperc}%", "color": ${if_match ${memperc}<75}"\#00ff00"${else}${if_match ${memperc}<90}"\#ffff00"${else}"\#ff0000"${endif}${endif} },
 
-${if_up wlo1}
- { "full_text": "WiFi: (${if_match ${wireless_link_qual_perc wlo1}<100} ${endif}${wireless_link_qual_perc wlo1}% at ${wireless_essid wlo1}) ${addr wlo1}", "align": "left", "color": ${if_match ${wireless_link_qual_perc wlo1}<40}"\#ff0000"${else}${if_match ${wireless_link_qual_perc wlo1}<50}"\#ffff00"${else}"\#00ff00"${endif}${endif} },
+${if_up wlp0s20f3}
+ { "full_text": "WiFi: (${if_match ${wireless_link_qual_perc wlp0s20f3}<100} ${endif}${wireless_link_qual_perc wlp0s20f3}% at ${wireless_essid wlp0s20f3}) ${addr wlp0s20f3}", "align": "left", "color": ${if_match ${wireless_link_qual_perc wlp0s20f3}<40}"\#ff0000"${else}${if_match ${wireless_link_qual_perc wlp0s20f3}<50}"\#ffff00"${else}"\#00ff00"${endif}${endif} },
 ${endif}
 
-${if_up enp3s0}
- { "full_text": "Eth: ${addr enp3s0}", "color": "\#00ff00" },
+${if_up enp152s0}
+ { "full_text": "Eth: ${addr enp152s0}", "color": "\#00ff00" },
 ${endif}
 
 ${if_up tun0}
  { "full_text": "VPN: ${addr tun0}", "color": "\#00ff00" },
 ${endif}
 
- { "full_text": "${battery_short BAT1} ${battery_time BAT1}", "color": ${if_match ${battery_percent BAT1}>50}"\#ffffff"${else}${if_match ${battery_percent BAT1}>25}"\#ffff00"${else}"\#ff0000"${endif}${endif} },
+ { "full_text": "${battery_short BAT0} ${battery_time BAT0}", "color": ${if_match ${battery_percent BAT0}>50}"\#ffffff"${else}${if_match ${battery_percent BAT0}>25}"\#ffff00"${else}"\#ff0000"${endif}${endif} },
  { "full_text": "CPU: ${cpu cpu0}%", "min_width": "CPU: 100%", "align": "left", "color": "\#ffffff" },
  { "full_text": "♪: ${if_pa_sink_muted}(muted) ${endif}${pa_sink_volume}%", "color": ${if_pa_sink_muted}"\#ffff00"${else}"\#ffffff"${endif} },
  { "full_text": "${time %Y-%m-%d %H:%M:%S}", "color": "\#ffffff", "name": "time" }

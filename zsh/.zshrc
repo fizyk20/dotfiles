@@ -49,13 +49,15 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenv virtualenvwrapper)
+plugins=(git virtualenv virtualenvwrapper ssh-agent)
 
 # User configuration
 
 export WORKON_HOME=~/envs
-export PATH="/home/bartek/.my-bin:/home/bartek/.cabal/bin:/home/bartek/.cargo/bin:/home/bartek/.npm-global/bin:/home/bartek/CasperLabs/contracts/wabt/out/clang/Release/no-tests:/sbin:/usr/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/home/bartek/.my-bin:/home/bartek/.cabal/bin:/home/bartek/.cargo/bin:/home/bartek/.npm-global/bin:/home/bartek/.foundry/bin:/sbin:/usr/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+zstyle ':omz:alpha:lib:git' async-prompt no
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,3 +85,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias lsuspend="i3lock -c 333333; systemctl suspend"
+alias lock="i3lock -c 333333"

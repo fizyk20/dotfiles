@@ -7,4 +7,4 @@ URxvt.transparent: true
 URxvt.shading: 20
 URxvt.scrollstyle: plain
 URxvt.scrollBar_right: true
-xft.dpi: 96
+xft.dpi: 128
